@@ -8,22 +8,62 @@
 
 /* Begin PBXBuildFile section */
 		343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB74328F33BCC003B38AC /* AppDelegate.swift */; };
-		343CB74628F33BCC003B38AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB74528F33BCC003B38AC /* SceneDelegate.swift */; };
-		343CB74828F33BCC003B38AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB74728F33BCC003B38AC /* ViewController.swift */; };
-		343CB74B28F33BCC003B38AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343CB74928F33BCC003B38AC /* Main.storyboard */; };
-		343CB74D28F33BCE003B38AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 343CB74C28F33BCE003B38AC /* Assets.xcassets */; };
-		343CB75028F33BCE003B38AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 343CB74E28F33BCE003B38AC /* LaunchScreen.storyboard */; };
+		343CB75C28F33D2D003B38AC /* AccessLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB75B28F33D2D003B38AC /* AccessLibraryViewController.swift */; };
+		343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB75D28F33D5E003B38AC /* SelectPhotoViewController.swift */; };
+		343CB76028F33D7C003B38AC /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB75F28F33D7C003B38AC /* EditorViewController.swift */; };
+		343CB76328F33DB1003B38AC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB76228F33DB1003B38AC /* View.swift */; };
+		343CB76528F33DCC003B38AC /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB76428F33DCC003B38AC /* RoundedButton.swift */; };
+		343CB76828F34229003B38AC /* PhotosInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB76728F34229003B38AC /* PhotosInteractor.swift */; };
+		343CB76A28F346B2003B38AC /* SelectPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343CB76928F346B2003B38AC /* SelectPhotoCell.swift */; };
+		344B14C829055FA900AC4C8E /* Editor+TextsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14C729055FA900AC4C8E /* Editor+TextsView.swift */; };
+		344B14CB290561A700AC4C8E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14CA290561A700AC4C8E /* UIImage.swift */; };
+		344B14CF2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14CE2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift */; };
+		344B14D12905668800AC4C8E /* EditorViewController+NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D02905668800AC4C8E /* EditorViewController+NavigationView.swift */; };
+		344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */; };
+		344B14D72905746E00AC4C8E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D62905746E00AC4C8E /* BlurView.swift */; };
+		344B14D92906743400AC4C8E /* EditorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D82906743400AC4C8E /* EditorTool.swift */; };
+		34ABA33928F89C01000330C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA33828F89C01000330C6 /* ViewController.swift */; };
+		34ABA33B28F89E96000330C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ABA33A28F89E96000330C6 /* Assets.xcassets */; };
+		34ABA33D28F89F57000330C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ABA33C28F89F57000330C6 /* LaunchScreen.storyboard */; };
+		34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA33E28F8A0A6000330C6 /* Editor+CanvasView.swift */; };
+		34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */; };
+		34ABA34628F8B196000330C6 /* Editor+DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA34528F8B196000330C6 /* Editor+DrawView.swift */; };
+		34EACA4428FB2FBF00D3A167 /* ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */; };
+		34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */; };
+		34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */; };
+		34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */; };
+		34EACA4C28FB399500D3A167 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4B28FB399500D3A167 /* Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		343CB74028F33BCC003B38AC /* Telegram_IOS_Contest_2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Telegram_IOS_Contest_2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		343CB74328F33BCC003B38AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		343CB74528F33BCC003B38AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		343CB74728F33BCC003B38AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		343CB74A28F33BCC003B38AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		343CB74C28F33BCE003B38AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		343CB74F28F33BCE003B38AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		343CB75128F33BCE003B38AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		343CB75B28F33D2D003B38AC /* AccessLibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessLibraryViewController.swift; sourceTree = "<group>"; };
+		343CB75D28F33D5E003B38AC /* SelectPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoViewController.swift; sourceTree = "<group>"; };
+		343CB75F28F33D7C003B38AC /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		343CB76228F33DB1003B38AC /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		343CB76428F33DCC003B38AC /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		343CB76728F34229003B38AC /* PhotosInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosInteractor.swift; sourceTree = "<group>"; };
+		343CB76928F346B2003B38AC /* SelectPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoCell.swift; sourceTree = "<group>"; };
+		344B14C729055FA900AC4C8E /* Editor+TextsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+TextsView.swift"; sourceTree = "<group>"; };
+		344B14CA290561A700AC4C8E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		344B14CE2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+ToolsDelegate.swift"; sourceTree = "<group>"; };
+		344B14D02905668800AC4C8E /* EditorViewController+NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+NavigationView.swift"; sourceTree = "<group>"; };
+		344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+NavigationDelegate.swift"; sourceTree = "<group>"; };
+		344B14D62905746E00AC4C8E /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		344B14D82906743400AC4C8E /* EditorTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTool.swift; sourceTree = "<group>"; };
+		34ABA33828F89C01000330C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		34ABA33A28F89E96000330C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		34ABA33C28F89F57000330C6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		34ABA33E28F8A0A6000330C6 /* Editor+CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+CanvasView.swift"; sourceTree = "<group>"; };
+		34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsView.swift"; sourceTree = "<group>"; };
+		34ABA34528F8B196000330C6 /* Editor+DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+DrawView.swift"; sourceTree = "<group>"; };
+		34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewDelegate.swift; sourceTree = "<group>"; };
+		34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsLeftView.swift"; sourceTree = "<group>"; };
+		34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsRightView.swift"; sourceTree = "<group>"; };
+		34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsCenterView.swift"; sourceTree = "<group>"; };
+		34EACA4B28FB399500D3A167 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +97,130 @@
 			isa = PBXGroup;
 			children = (
 				343CB74328F33BCC003B38AC /* AppDelegate.swift */,
-				343CB74528F33BCC003B38AC /* SceneDelegate.swift */,
-				343CB74728F33BCC003B38AC /* ViewController.swift */,
-				343CB74928F33BCC003B38AC /* Main.storyboard */,
-				343CB74C28F33BCE003B38AC /* Assets.xcassets */,
-				343CB74E28F33BCE003B38AC /* LaunchScreen.storyboard */,
 				343CB75128F33BCE003B38AC /* Info.plist */,
+				34ABA33A28F89E96000330C6 /* Assets.xcassets */,
+				34ABA33C28F89F57000330C6 /* LaunchScreen.storyboard */,
+				344B14C92905619700AC4C8E /* Extensions */,
+				343CB76628F3420A003B38AC /* Interactors */,
+				343CB76128F33D90003B38AC /* Views */,
+				343CB75728F33CC2003B38AC /* Screens */,
 			);
 			path = Telegram_IOS_Contest_2022;
+			sourceTree = "<group>";
+		};
+		343CB75728F33CC2003B38AC /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				343CB75828F33CE0003B38AC /* AccessLibrary */,
+				343CB75928F33CF0003B38AC /* SelectPhoto */,
+				343CB75A28F33D0A003B38AC /* Editor */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		343CB75828F33CE0003B38AC /* AccessLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				343CB75B28F33D2D003B38AC /* AccessLibraryViewController.swift */,
+			);
+			path = AccessLibrary;
+			sourceTree = "<group>";
+		};
+		343CB75928F33CF0003B38AC /* SelectPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				343CB75D28F33D5E003B38AC /* SelectPhotoViewController.swift */,
+				343CB76928F346B2003B38AC /* SelectPhotoCell.swift */,
+			);
+			path = SelectPhoto;
+			sourceTree = "<group>";
+		};
+		343CB75A28F33D0A003B38AC /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				343CB75F28F33D7C003B38AC /* EditorViewController.swift */,
+				34ABA34228F8AD1D000330C6 /* Subviews */,
+				344B14CD2905662400AC4C8E /* Delegates */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		343CB76128F33D90003B38AC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				343CB76228F33DB1003B38AC /* View.swift */,
+				343CB76428F33DCC003B38AC /* RoundedButton.swift */,
+				34ABA33828F89C01000330C6 /* ViewController.swift */,
+				34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */,
+				34EACA4B28FB399500D3A167 /* Button.swift */,
+				344B14D62905746E00AC4C8E /* BlurView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		343CB76628F3420A003B38AC /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				343CB76728F34229003B38AC /* PhotosInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		344B14C92905619700AC4C8E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				344B14CA290561A700AC4C8E /* UIImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		344B14CC2905661200AC4C8E /* NavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				344B14D02905668800AC4C8E /* EditorViewController+NavigationView.swift */,
+			);
+			path = NavigationView;
+			sourceTree = "<group>";
+		};
+		344B14CD2905662400AC4C8E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				344B14CE2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift */,
+				344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		34ABA34228F8AD1D000330C6 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				344B14CC2905661200AC4C8E /* NavigationView */,
+				34ABA34328F8AD24000330C6 /* Canvas */,
+				34ABA34428F8AD29000330C6 /* Tools */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		34ABA34328F8AD24000330C6 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				34ABA33E28F8A0A6000330C6 /* Editor+CanvasView.swift */,
+				34ABA34528F8B196000330C6 /* Editor+DrawView.swift */,
+				344B14C729055FA900AC4C8E /* Editor+TextsView.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		34ABA34428F8AD29000330C6 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				344B14D82906743400AC4C8E /* EditorTool.swift */,
+				34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */,
+				34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */,
+				34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */,
+				34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +281,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343CB75028F33BCE003B38AC /* LaunchScreen.storyboard in Resources */,
-				343CB74D28F33BCE003B38AC /* Assets.xcassets in Resources */,
-				343CB74B28F33BCC003B38AC /* Main.storyboard in Resources */,
+				34ABA33B28F89E96000330C6 /* Assets.xcassets in Resources */,
+				34ABA33D28F89F57000330C6 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +293,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				343CB74828F33BCC003B38AC /* ViewController.swift in Sources */,
+				343CB75C28F33D2D003B38AC /* AccessLibraryViewController.swift in Sources */,
+				343CB76828F34229003B38AC /* PhotosInteractor.swift in Sources */,
+				344B14D72905746E00AC4C8E /* BlurView.swift in Sources */,
+				34EACA4C28FB399500D3A167 /* Button.swift in Sources */,
+				343CB76A28F346B2003B38AC /* SelectPhotoCell.swift in Sources */,
+				34ABA34628F8B196000330C6 /* Editor+DrawView.swift in Sources */,
+				34ABA33928F89C01000330C6 /* ViewController.swift in Sources */,
+				343CB76528F33DCC003B38AC /* RoundedButton.swift in Sources */,
+				344B14D92906743400AC4C8E /* EditorTool.swift in Sources */,
+				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
 				343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */,
-				343CB74628F33BCC003B38AC /* SceneDelegate.swift in Sources */,
+				343CB76328F33DB1003B38AC /* View.swift in Sources */,
+				344B14C829055FA900AC4C8E /* Editor+TextsView.swift in Sources */,
+				34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */,
+				344B14CF2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift in Sources */,
+				34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */,
+				343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */,
+				34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */,
+				344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */,
+				34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */,
+				344B14CB290561A700AC4C8E /* UIImage.swift in Sources */,
+				344B14D12905668800AC4C8E /* EditorViewController+NavigationView.swift in Sources */,
+				34EACA4428FB2FBF00D3A167 /* ScrollViewDelegate.swift in Sources */,
+				343CB76028F33D7C003B38AC /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		343CB74928F33BCC003B38AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				343CB74A28F33BCC003B38AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		343CB74E28F33BCE003B38AC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				343CB74F28F33BCE003B38AC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		343CB75228F33BCE003B38AC /* Debug */ = {
@@ -290,9 +447,11 @@
 				DEVELOPMENT_TEAM = 8HA3X89398;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegram_IOS_Contest_2022/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Telegram Contest Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Telegram Contest Pavel Lunev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -300,11 +459,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.development.telegramContest2022.Telegram-IOS-Contest-2022";
+				PRODUCT_BUNDLE_IDENTIFIER = com.development.telegramContest2022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,9 +477,11 @@
 				DEVELOPMENT_TEAM = 8HA3X89398;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegram_IOS_Contest_2022/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Telegram Contest Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Telegram Contest Pavel Lunev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -328,11 +489,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.development.telegramContest2022.Telegram-IOS-Contest-2022";
+				PRODUCT_BUNDLE_IDENTIFIER = com.development.telegramContest2022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
