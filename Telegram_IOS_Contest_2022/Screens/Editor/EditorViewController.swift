@@ -18,6 +18,14 @@ final class EditorViewController: ViewController {
 
     let gradientLayer = CAGradientLayer()
 
+    // MARK: Properties
+
+    var drawColor: UIColor = .red
+
+    var textFont: UIFont = .systemFont(ofSize: 50, weight: .bold)
+    var textColor: UIColor = .white
+    var textAlignment: NSTextAlignment = .left
+
     init(asset: PHAsset) {
         self.asset = asset
         
@@ -42,6 +50,9 @@ final class EditorViewController: ViewController {
 
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.layer.mask = gradientLayer
+        canvasView.drawView.delegate = self
+        canvasView.textsView.delegate = self
+
         gradientLayer.colors = [UIColor.black.withAlphaComponent(0.5).cgColor,
                                 UIColor.black.cgColor,
                                 UIColor.black.cgColor,
@@ -60,7 +71,10 @@ final class EditorViewController: ViewController {
 
         toolsView.translatesAutoresizingMaskIntoConstraints = false
         toolsView.delegate = self
+        toolsView.centerView.textsSelectors.delegate = self
         view.addSubview(toolsView)
+
+        centerViewDrawEditorSelected()
     }
 
     override func setupSizes() {

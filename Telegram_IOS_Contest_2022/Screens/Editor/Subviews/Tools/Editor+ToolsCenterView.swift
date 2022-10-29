@@ -20,6 +20,7 @@ extension EditorToolsView {
 
         let editorControl = UISegmentedControl(items: ["Draw", "Text"])
         let toolsSelector = ToolSelectorView()
+        let textsSelectors = TextPropertiesSelectorView()
 
         override func setup() {
             super.setup()
@@ -33,6 +34,9 @@ extension EditorToolsView {
             toolsSelector.translatesAutoresizingMaskIntoConstraints = false
             addSubview(toolsSelector)
 
+            textsSelectors.translatesAutoresizingMaskIntoConstraints = false
+            textsSelectors.isHidden = true
+            addSubview(textsSelectors)
         }
 
         override func setupSizes() {
@@ -51,14 +55,22 @@ extension EditorToolsView {
 
             toolsSelector.setContentHuggingPriority(.defaultLow, for: .horizontal)
             toolsSelector.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
+
+            textsSelectors.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            textsSelectors.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            textsSelectors.bottomAnchor.constraint(equalTo: editorControl.topAnchor, constant: -16).isActive = true
         }
 
         @objc
         private func indexChanged(_ control: UISegmentedControl) {
             switch control.selectedSegmentIndex {
             case 0:
+                toolsSelector.isHidden = false
+                textsSelectors.isHidden = true
                 delegate?.centerViewDrawEditorSelected()
             case 1:
+                toolsSelector.isHidden = true
+                textsSelectors.isHidden = false
                 delegate?.centerViewTextEditorSelected()
             default:
                 break

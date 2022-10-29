@@ -12,7 +12,6 @@ final class EditorCanvasView: View {
     var asset: UIImage? {
         didSet {
             assetImageView.image = asset
-            drawView.canvasSize = asset?.size ?? .zero
         }
     }
 
@@ -20,8 +19,8 @@ final class EditorCanvasView: View {
     private let containerView = UIView()
 
     private let assetImageView = UIImageView()
-    private let drawView = DrawView()
-    private let textsView = EditorTextsView()
+    let drawView = DrawView()
+    let textsView = TextsView()
 
     override func setup() {
         super.setup()
@@ -30,7 +29,6 @@ final class EditorCanvasView: View {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.delegate = self
         scrollView.isScrollEnabled = false
-        scrollView.touchesDelegate = drawView
 
         scrollView.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,6 +40,9 @@ final class EditorCanvasView: View {
 
         containerView.addSubview(drawView)
         drawView.translatesAutoresizingMaskIntoConstraints = false
+
+        containerView.addSubview(textsView)
+        textsView.translatesAutoresizingMaskIntoConstraints = false
     }
 
     override func setupSizes() {
@@ -66,6 +67,11 @@ final class EditorCanvasView: View {
         drawView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         drawView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
         drawView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
+
+        textsView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        textsView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        textsView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
+        textsView.topAnchor.constraint(equalTo: containerView.topAnchor).isActive = true
     }
 
     override func layoutSubviews() {
@@ -111,7 +117,31 @@ final class EditorCanvasView: View {
     }
 
     func getImageForExport() -> UIImage? {
-        assetImageView.image?.compositeWith(image: drawView.image!)
+        let assetImage = assetImageView.image
+        let drawImage = drawView.getImage()
+        let textsImage = textsView.getImage()
+
+        var outputImage = assetImage
+
+        if let drawImage = drawImage {
+            outputImage = outputImage?.compositeWith(image: drawImage)
+        }
+
+        if let textsImage = textsImage {
+            outputImage = outputImage?.compositeWith(image: textsImage)
+        }
+
+        return outputImage
+    }
+
+    func enableDrawEditor() {
+        scrollView.removeDelegate(textsView)
+        scrollView.addDelegate(drawView)
+    }
+
+    func enableTextEditor() {
+        scrollView.removeDelegate(drawView)
+        scrollView.addDelegate(textsView)
     }
 }
 

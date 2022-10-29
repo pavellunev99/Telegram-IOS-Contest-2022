@@ -19,4 +19,41 @@ extension EditorViewController: EditorToolsViewDelegate {
     func toolsViewTapClose() {
         dismiss(animated: true)
     }
+
+    func toolsViewTapSelectColor() {
+        switch Int.random(in: 0...5) {
+        case 0:
+            drawColor = .cyan
+        case 1:
+            drawColor = .green
+        case 2:
+            drawColor = .blue
+        case 3:
+            drawColor = .white
+        case 4:
+            drawColor = .yellow
+        default:
+            drawColor = .red
+        }
+    }
+
+    func centerViewDrawEditorSelected() {
+        canvasView.enableDrawEditor()
+    }
+
+    func centerViewTextEditorSelected() {
+        canvasView.enableTextEditor()
+    }
+}
+
+extension EditorViewController: TextPropertiesSelectorViewDelegate {
+
+    func textAlignmentDidSelected(_ alignment: NSTextAlignment) {
+        self.textAlignment = alignment
+    }
+
+    func textFontDidSelected(_ font: UIFont) {
+        self.textFont = font
+    }
+
 }

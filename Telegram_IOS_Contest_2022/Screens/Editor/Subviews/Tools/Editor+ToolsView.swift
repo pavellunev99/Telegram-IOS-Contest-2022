@@ -10,6 +10,9 @@ import UIKit
 protocol EditorToolsViewDelegate: AnyObject {
     func toolsViewTapSave()
     func toolsViewTapClose()
+    func toolsViewTapSelectColor()
+    func centerViewDrawEditorSelected()
+    func centerViewTextEditorSelected()
 }
 
 final class EditorToolsView: View {
@@ -60,7 +63,7 @@ final class EditorToolsView: View {
 extension EditorToolsView: EditorToolsLeftViewDelegate {
 
     func tapSelectColor() {
-
+        delegate?.toolsViewTapSelectColor()
     }
 
     func tapClose() {
@@ -82,10 +85,10 @@ extension EditorToolsView: EditorToolsRightViewDelegate {
 extension EditorToolsView: EditorToolsCenterViewDelegate {
 
     func centerViewDrawEditorSelected() {
-
+        delegate?.centerViewDrawEditorSelected()
     }
 
     func centerViewTextEditorSelected() {
-        
+        delegate?.centerViewTextEditorSelected()
     }
 }

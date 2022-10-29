@@ -22,13 +22,18 @@
 		344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */; };
 		344B14D72905746E00AC4C8E /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D62905746E00AC4C8E /* BlurView.swift */; };
 		344B14D92906743400AC4C8E /* EditorTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14D82906743400AC4C8E /* EditorTool.swift */; };
+		344B14DB2906ACDC00AC4C8E /* OnDrawAnimatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14DA2906ACDC00AC4C8E /* OnDrawAnimatedView.swift */; };
+		344B14DD2906AD1800AC4C8E /* SystemUptime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344B14DC2906AD1800AC4C8E /* SystemUptime.swift */; };
 		34ABA33928F89C01000330C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA33828F89C01000330C6 /* ViewController.swift */; };
 		34ABA33B28F89E96000330C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34ABA33A28F89E96000330C6 /* Assets.xcassets */; };
 		34ABA33D28F89F57000330C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34ABA33C28F89F57000330C6 /* LaunchScreen.storyboard */; };
 		34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA33E28F8A0A6000330C6 /* Editor+CanvasView.swift */; };
 		34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */; };
 		34ABA34628F8B196000330C6 /* Editor+DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34ABA34528F8B196000330C6 /* Editor+DrawView.swift */; };
-		34EACA4428FB2FBF00D3A167 /* ScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */; };
+		34DED43D290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED43C290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift */; };
+		34DED43F290DB05D0073FA61 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED43E290DB05D0073FA61 /* Weak.swift */; };
+		34DED441290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DED440290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift */; };
+		34EACA4428FB2FBF00D3A167 /* TouchesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4328FB2FBF00D3A167 /* TouchesScrollView.swift */; };
 		34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */; };
 		34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */; };
 		34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */; };
@@ -53,13 +58,18 @@
 		344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+NavigationDelegate.swift"; sourceTree = "<group>"; };
 		344B14D62905746E00AC4C8E /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		344B14D82906743400AC4C8E /* EditorTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTool.swift; sourceTree = "<group>"; };
+		344B14DA2906ACDC00AC4C8E /* OnDrawAnimatedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDrawAnimatedView.swift; sourceTree = "<group>"; };
+		344B14DC2906AD1800AC4C8E /* SystemUptime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemUptime.swift; sourceTree = "<group>"; };
 		34ABA33828F89C01000330C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34ABA33A28F89E96000330C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34ABA33C28F89F57000330C6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34ABA33E28F8A0A6000330C6 /* Editor+CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+CanvasView.swift"; sourceTree = "<group>"; };
 		34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsView.swift"; sourceTree = "<group>"; };
 		34ABA34528F8B196000330C6 /* Editor+DrawView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+DrawView.swift"; sourceTree = "<group>"; };
-		34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewDelegate.swift; sourceTree = "<group>"; };
+		34DED43C290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+CanvasDelegates.swift"; sourceTree = "<group>"; };
+		34DED43E290DB05D0073FA61 /* Weak.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weak.swift; sourceTree = "<group>"; };
+		34DED440290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+TextPropertiesSelector.swift"; sourceTree = "<group>"; };
+		34EACA4328FB2FBF00D3A167 /* TouchesScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchesScrollView.swift; sourceTree = "<group>"; };
 		34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsLeftView.swift"; sourceTree = "<group>"; };
 		34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsRightView.swift"; sourceTree = "<group>"; };
 		34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsCenterView.swift"; sourceTree = "<group>"; };
@@ -148,12 +158,13 @@
 		343CB76128F33D90003B38AC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				343CB76228F33DB1003B38AC /* View.swift */,
-				343CB76428F33DCC003B38AC /* RoundedButton.swift */,
 				34ABA33828F89C01000330C6 /* ViewController.swift */,
-				34EACA4328FB2FBF00D3A167 /* ScrollViewDelegate.swift */,
+				343CB76228F33DB1003B38AC /* View.swift */,
 				34EACA4B28FB399500D3A167 /* Button.swift */,
+				343CB76428F33DCC003B38AC /* RoundedButton.swift */,
+				34EACA4328FB2FBF00D3A167 /* TouchesScrollView.swift */,
 				344B14D62905746E00AC4C8E /* BlurView.swift */,
+				344B14DA2906ACDC00AC4C8E /* OnDrawAnimatedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				344B14CA290561A700AC4C8E /* UIImage.swift */,
+				344B14DC2906AD1800AC4C8E /* SystemUptime.swift */,
+				34DED43E290DB05D0073FA61 /* Weak.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 			children = (
 				344B14CE2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift */,
 				344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */,
+				34DED43C290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -219,6 +233,7 @@
 				34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */,
 				34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */,
 				34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */,
+				34DED440290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -305,17 +320,22 @@
 				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
 				343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */,
 				343CB76328F33DB1003B38AC /* View.swift in Sources */,
+				34DED43D290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift in Sources */,
+				34DED43F290DB05D0073FA61 /* Weak.swift in Sources */,
+				344B14DD2906AD1800AC4C8E /* SystemUptime.swift in Sources */,
 				344B14C829055FA900AC4C8E /* Editor+TextsView.swift in Sources */,
 				34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */,
+				344B14DB2906ACDC00AC4C8E /* OnDrawAnimatedView.swift in Sources */,
 				344B14CF2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift in Sources */,
 				34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */,
 				343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */,
+				34DED441290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift in Sources */,
 				34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */,
 				344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */,
 				34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */,
 				344B14CB290561A700AC4C8E /* UIImage.swift in Sources */,
 				344B14D12905668800AC4C8E /* EditorViewController+NavigationView.swift in Sources */,
-				34EACA4428FB2FBF00D3A167 /* ScrollViewDelegate.swift in Sources */,
+				34EACA4428FB2FBF00D3A167 /* TouchesScrollView.swift in Sources */,
 				343CB76028F33D7C003B38AC /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
