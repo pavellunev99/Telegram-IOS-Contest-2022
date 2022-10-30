@@ -37,6 +37,14 @@ extension EditorCanvasView {
 
         private var inputTextView = UITextView()
 
+        func updateEditingViewStyle() {
+            if let editingView = editingView {
+                editingView.font = delegate?.editorTextsViewFont()
+                editingView.textColor = delegate?.editorTextsViewColor()
+                editingView.textAlignment = delegate?.editorTextsViewAlignment()
+            }
+        }
+
         func clear() {
             editingView = nil
             subviews.forEach {

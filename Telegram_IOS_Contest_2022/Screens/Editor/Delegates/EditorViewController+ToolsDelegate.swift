@@ -50,10 +50,26 @@ extension EditorViewController: TextPropertiesSelectorViewDelegate {
 
     func textAlignmentDidSelected(_ alignment: NSTextAlignment) {
         self.textAlignment = alignment
+
+        canvasView.textsView.updateEditingViewStyle()
     }
 
-    func textFontDidSelected(_ font: UIFont) {
-        self.textFont = font
+    func textFontFamilyDidSelected(_ family: String) {
+        let fontNames = UIFont.fontNames(forFamilyName: family)
+        let fontName: String
+
+        if let boldFontName = fontNames.first(where: { $0.contains("Bold") }) {
+            fontName = boldFontName
+        } else {
+            fontName = fontNames.first!
+        }
+
+        self.textFont = UIFont.init(name: fontName, size: 50) ?? .systemFont(ofSize: 50)
+
+        canvasView.textsView.updateEditingViewStyle()
     }
 
+    func textStyleDidSelected(_ style: FontStyle) {
+        canvasView.textsView.updateEditingViewStyle()
+    }
 }

@@ -7,32 +7,50 @@
 
 import UIKit
 
+enum FontStyle {
+    case none
+    case filled
+    case semi
+    case stroke
+}
+
 protocol TextPropertiesSelectorViewDelegate: AnyObject {
     func textAlignmentDidSelected(_ alignment: NSTextAlignment)
-    func textFontDidSelected(_ font: UIFont)
+    func textFontFamilyDidSelected(_ family: String)
+    func textStyleDidSelected(_ style: FontStyle)
+}
+
+fileprivate protocol StyleSelectorViewDelegate: AnyObject {
+    func textStyleDidSelected(_ style: FontStyle)
 }
 
 fileprivate protocol AlignmentSelectorViewDelegate: AnyObject {
     func textAlignmentDidSelected(_ alignment: NSTextAlignment)
 }
 
-fileprivate protocol FontSelectorViewDelegate: AnyObject {
-    func textFontDidSelected(_ font: UIFont)
+fileprivate protocol FontFamilySelectorViewDelegate: AnyObject {
+    func textFontFamilyDidSelected(_ family: String)
 }
 
 extension EditorToolsView {
 
     final class TextPropertiesSelectorView: View,
+                                            StyleSelectorViewDelegate,
                                             AlignmentSelectorViewDelegate,
-                                            FontSelectorViewDelegate {
+                                            FontFamilySelectorViewDelegate {
 
         weak var delegate: TextPropertiesSelectorViewDelegate?
 
+        fileprivate let styleView = StyleSelectorView()
         fileprivate let alignmentView = AlignmentSelectorView()
-        fileprivate let fontsView = FontSelectorView()
+        fileprivate let fontsView = FontFamilySelectorView()
 
         override func setup() {
             super.setup()
+
+            styleView.translatesAutoresizingMaskIntoConstraints = false
+            styleView.delegate = self
+            addSubview(styleView)
 
             alignmentView.translatesAutoresizingMaskIntoConstraints = false
             alignmentView.delegate = self
@@ -48,8 +66,13 @@ extension EditorToolsView {
 
             heightAnchor.constraint(equalToConstant: 30).isActive = true
 
+            styleView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+            styleView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            styleView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+            styleView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+
             alignmentView.widthAnchor.constraint(equalToConstant: 30).isActive = true
-            alignmentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            alignmentView.leadingAnchor.constraint(equalTo: styleView.trailingAnchor, constant: 16).isActive = true
             alignmentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
             alignmentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
 
@@ -63,8 +86,82 @@ extension EditorToolsView {
             delegate?.textAlignmentDidSelected(alignment)
         }
 
-        func textFontDidSelected(_ font: UIFont) {
-            delegate?.textFontDidSelected(font)
+        func textFontFamilyDidSelected(_ family: String) {
+            delegate?.textFontFamilyDidSelected(family)
+        }
+
+        func textStyleDidSelected(_ style: FontStyle) {
+            delegate?.textStyleDidSelected(style)
+        }
+    }
+
+    fileprivate final class StyleSelectorView: View {
+
+        private let _availableStyles: [FontStyle] = [.none, .filled, .semi, .stroke]
+
+        private var _selectedStyle: FontStyle = .none {
+            didSet {
+                _update()
+                delegate?.textStyleDidSelected(_selectedStyle)
+            }
+        }
+
+        weak var delegate: StyleSelectorViewDelegate?
+
+        private let imageView = UIImageView()
+
+        override func setup() {
+            super.setup()
+
+            addTarget(self, action: #selector(_tapAction), for: .touchUpInside)
+
+            imageView.contentMode = .scaleAspectFill
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.isUserInteractionEnabled = false
+            addSubview(imageView)
+
+            _update()
+        }
+
+        override func setupSizes() {
+            super.setupSizes()
+
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        }
+
+        private func _update() {
+            switch _selectedStyle {
+            case .none:
+                imageView.image = .init(named: "default")
+            case .filled:
+                imageView.image = .init(named: "filled")
+            case .semi:
+                imageView.image = .init(named: "semi")
+            case .stroke:
+                imageView.image = .init(named: "stroke")
+            }
+        }
+
+        @objc
+        private func _tapAction() {
+            let nextStyle: FontStyle
+
+            if let index = _availableStyles.firstIndex(of: _selectedStyle) {
+
+                if index + 1 >= _availableStyles.count {
+                    nextStyle = _availableStyles.first!
+                } else {
+                    nextStyle = _availableStyles[index + 1]
+                }
+
+            } else {
+                nextStyle = _availableStyles.first!
+            }
+
+            self._selectedStyle = nextStyle
         }
     }
 
@@ -138,17 +235,140 @@ extension EditorToolsView {
         }
     }
 
-    fileprivate final class FontSelectorView: View {
+    fileprivate final class FontFamilySelectorView: View, UICollectionViewDelegate, UICollectionViewDataSource {
 
-        weak var delegate: FontSelectorViewDelegate?
+        weak var delegate: FontFamilySelectorViewDelegate?
+
+        private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
 
         override func setup() {
             super.setup()
 
+            UIFont.familyNames.forEach {
+                print(UIFont.fontNames(forFamilyName: $0))
+            }
+
+            collectionView.register(FontFamilyCell.self, forCellWithReuseIdentifier: "cell")
+            collectionView.backgroundColor = .clear
+            collectionView.delegate = self
+            collectionView.dataSource = self
+            collectionView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(collectionView)
         }
 
         override func setupSizes() {
-            super.setupSizes()
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        }
+
+        override func layoutSubviews() {
+            super.layoutSubviews()
+
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            layout.minimumLineSpacing = 12
+            layout.minimumInteritemSpacing = 12
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+
+            collectionView.setCollectionViewLayout(layout, animated: true)
+        }
+
+        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FontFamilyCell {
+
+                let fontNames = UIFont.fontNames(forFamilyName: UIFont.familyNames[indexPath.row])
+                let fontName: String
+
+                if let boldFontName = fontNames.first(where: { $0.contains("Bold") }) {
+                    fontName = boldFontName
+                } else {
+                    fontName = fontNames.first!
+                }
+
+                let font = UIFont.init(name: fontName, size: 13)
+                cell.font = font
+
+                return cell
+            } else {
+                return UICollectionViewCell()
+            }
+        }
+
+        func numberOfSections(in collectionView: UICollectionView) -> Int {
+            1
+        }
+
+        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            UIFont.familyNames.count
+        }
+
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.isSelected = true
+
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+
+            delegate?.textFontFamilyDidSelected(UIFont.familyNames[indexPath.row])
+        }
+    }
+
+    fileprivate final class FontFamilyCell: UICollectionViewCell {
+
+        override var isSelected: Bool {
+            didSet {
+                contentView.layer.borderColor = isSelected ? UIColor.white.cgColor : UIColor.white.withAlphaComponent(0.33).cgColor
+            }
+        }
+
+        var font: UIFont? {
+            didSet {
+                label.text = font?.familyName
+                label.font = font
+            }
+        }
+
+        let label = UILabel()
+
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+
+            contentView.layer.masksToBounds = true
+            contentView.layer.borderWidth = 1
+            contentView.layer.masksToBounds = true
+            contentView.layer.cornerRadius = 9
+
+            label.textAlignment = .center
+            label.textColor = .white
+            label.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview(label)
+        }
+
+        required init?(coder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        override func didMoveToSuperview() {
+            super.didMoveToSuperview()
+
+            contentView.heightAnchor.constraint(equalToConstant: 30).isActive = true
+            contentView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+            contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+            contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
+            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+
+            label.setContentHuggingPriority(.required, for: .horizontal)
+            label.setContentCompressionResistancePriority(.required, for: .horizontal)
         }
     }
 }
