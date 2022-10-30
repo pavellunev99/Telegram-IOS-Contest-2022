@@ -38,6 +38,7 @@
 		34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */; };
 		34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */; };
 		34EACA4C28FB399500D3A167 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4B28FB399500D3A167 /* Button.swift */; };
+		34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsRightView.swift"; sourceTree = "<group>"; };
 		34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsCenterView.swift"; sourceTree = "<group>"; };
 		34EACA4B28FB399500D3A167 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 				34EACA4328FB2FBF00D3A167 /* TouchesScrollView.swift */,
 				344B14D62905746E00AC4C8E /* BlurView.swift */,
 				344B14DA2906ACDC00AC4C8E /* OnDrawAnimatedView.swift */,
+				34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				343CB76528F33DCC003B38AC /* RoundedButton.swift in Sources */,
 				344B14D92906743400AC4C8E /* EditorTool.swift in Sources */,
 				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
+				34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */,
 				343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */,
 				343CB76328F33DB1003B38AC /* View.swift in Sources */,
 				34DED43D290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum FontStyle {
+enum TextStyle {
     case none
     case filled
     case semi
@@ -17,11 +17,11 @@ enum FontStyle {
 protocol TextPropertiesSelectorViewDelegate: AnyObject {
     func textAlignmentDidSelected(_ alignment: NSTextAlignment)
     func textFontFamilyDidSelected(_ family: String)
-    func textStyleDidSelected(_ style: FontStyle)
+    func textStyleDidSelected(_ style: TextStyle)
 }
 
 fileprivate protocol StyleSelectorViewDelegate: AnyObject {
-    func textStyleDidSelected(_ style: FontStyle)
+    func textStyleDidSelected(_ style: TextStyle)
 }
 
 fileprivate protocol AlignmentSelectorViewDelegate: AnyObject {
@@ -90,16 +90,16 @@ extension EditorToolsView {
             delegate?.textFontFamilyDidSelected(family)
         }
 
-        func textStyleDidSelected(_ style: FontStyle) {
+        func textStyleDidSelected(_ style: TextStyle) {
             delegate?.textStyleDidSelected(style)
         }
     }
 
     fileprivate final class StyleSelectorView: View {
 
-        private let _availableStyles: [FontStyle] = [.none, .filled, .semi, .stroke]
+        private let _availableStyles: [TextStyle] = [.none, .filled, .semi, .stroke]
 
-        private var _selectedStyle: FontStyle = .none {
+        private var _selectedStyle: TextStyle = .none {
             didSet {
                 _update()
                 delegate?.textStyleDidSelected(_selectedStyle)
@@ -147,7 +147,7 @@ extension EditorToolsView {
 
         @objc
         private func _tapAction() {
-            let nextStyle: FontStyle
+            let nextStyle: TextStyle
 
             if let index = _availableStyles.firstIndex(of: _selectedStyle) {
 

@@ -11,6 +11,7 @@ protocol EditorTextsViewDelegate: AnyObject {
     func editorTextsViewFont() -> UIFont
     func editorTextsViewColor() -> UIColor
     func editorTextsViewAlignment() -> NSTextAlignment
+    func editorTextStyle() -> TextStyle
 }
 
 extension EditorCanvasView {
@@ -19,29 +20,19 @@ extension EditorCanvasView {
 
         weak var delegate: EditorTextsViewDelegate?
 
-        override func setup() {
-            super.setup()
-
-            inputTextView.delegate = self
-            inputTextView.isHidden = true
-            addSubview(inputTextView)
-        }
-
         private weak var editingView: TextItemView? {
             didSet {
-                inputTextView.text = editingView?.text
-                inputTextView.becomeFirstResponder()
+                let _ = editingView?.becomeFirstResponder()
                 _updateEditingViewState()
             }
         }
-
-        private var inputTextView = UITextView()
 
         func updateEditingViewStyle() {
             if let editingView = editingView {
                 editingView.font = delegate?.editorTextsViewFont()
                 editingView.textColor = delegate?.editorTextsViewColor()
                 editingView.textAlignment = delegate?.editorTextsViewAlignment()
+                editingView.textStyle = delegate?.editorTextStyle()
             }
         }
 
@@ -74,6 +65,7 @@ extension EditorCanvasView {
             textView.font = delegate?.editorTextsViewFont()
             textView.textColor = delegate?.editorTextsViewColor()
             textView.textAlignment = delegate?.editorTextsViewAlignment()
+            textView.textStyle = delegate?.editorTextStyle()
 
             addSubview(textView)
             textView.centerPoint = point
@@ -114,18 +106,11 @@ extension EditorCanvasView.TextsView: ScrollViewTouchesDelegate {
     }
 }
 
-extension EditorCanvasView.TextsView: UITextViewDelegate {
-
-    func textViewDidChange(_ textView: UITextView) {
-        editingView?.text = inputTextView.text
-    }
-}
-
 extension EditorCanvasView.TextsView {
 
     fileprivate final class TextItemView: View {
 
-        private let label = UILabel()
+        private let textView = StyledTextView()
 
         var centerPoint: CGPoint = .zero {
             didSet {
@@ -159,65 +144,71 @@ extension EditorCanvasView.TextsView {
 
         var font: UIFont? {
             didSet {
-                label.font = font
+                textView.font = font
             }
         }
 
         var textColor: UIColor? {
             didSet {
-                label.textColor = textColor
+                textView.textColor = textColor
             }
         }
 
         var text: String? {
             get {
-                label.text
+                textView.text
             }
 
             set {
-                label.text = newValue
+                textView.text = newValue
+            }
+        }
+
+        var textStyle: TextStyle? {
+            didSet {
+                textView.textStyle = textStyle
             }
         }
 
         var textAlignment: NSTextAlignment? {
             didSet {
-                label.textAlignment = textAlignment ?? .left
+                textView.textAlignment = textAlignment
             }
         }
 
         var isEditing: Bool = false {
             didSet {
-                //backgroundColor = isEditing ? .green : .red
+
             }
         }
 
         override func setup() {
             super.setup()
 
-            //backgroundColor = isEditing ? .green : .red
-
-            label.font = font
-            label.textColor = textColor
-            label.text = "some text"
-            label.translatesAutoresizingMaskIntoConstraints = false
-            label.adjustsFontSizeToFitWidth = false
-            label.numberOfLines = 0
-            addSubview(label)
+            textView.font = font
+            textView.textColor = textColor
+            textView.text = "some text"
+            textView.translatesAutoresizingMaskIntoConstraints = false
+            addSubview(textView)
         }
 
         override func setupSizes() {
             super.setupSizes()
 
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
-            label.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
-            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
+            textView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive = true
+            textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive = true
+            textView.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
+            textView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4).isActive = true
 
-            label.setContentHuggingPriority(.required, for: .horizontal)
-            label.setContentCompressionResistancePriority(.required, for: .horizontal)
+            textView.setContentHuggingPriority(.required, for: .horizontal)
+            textView.setContentCompressionResistancePriority(.required, for: .horizontal)
 
-            label.setContentHuggingPriority(.required, for: .vertical)
-            label.setContentCompressionResistancePriority(.required, for: .vertical)
+            textView.setContentHuggingPriority(.required, for: .vertical)
+            textView.setContentCompressionResistancePriority(.required, for: .vertical)
+        }
+
+        override func becomeFirstResponder() -> Bool {
+            textView.becomeFirstResponder()
         }
     }
 }

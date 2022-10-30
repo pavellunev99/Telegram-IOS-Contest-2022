@@ -27,4 +27,8 @@ extension EditorViewController: EditorTextsViewDelegate {
     func editorTextsViewAlignment() -> NSTextAlignment {
         textAlignment
     }
+
+    func editorTextStyle() -> TextStyle {
+        textStyle
+    }
 }

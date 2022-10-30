@@ -25,6 +25,7 @@ final class EditorViewController: ViewController {
     var textFont: UIFont = .systemFont(ofSize: 50, weight: .bold)
     var textColor: UIColor = .white
     var textAlignment: NSTextAlignment = .left
+    var textStyle: TextStyle = .none
 
     init(asset: PHAsset) {
         self.asset = asset

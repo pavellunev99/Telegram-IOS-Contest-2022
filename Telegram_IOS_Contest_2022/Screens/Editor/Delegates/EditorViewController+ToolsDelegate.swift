@@ -50,7 +50,6 @@ extension EditorViewController: TextPropertiesSelectorViewDelegate {
 
     func textAlignmentDidSelected(_ alignment: NSTextAlignment) {
         self.textAlignment = alignment
-
         canvasView.textsView.updateEditingViewStyle()
     }
 
@@ -69,7 +68,8 @@ extension EditorViewController: TextPropertiesSelectorViewDelegate {
         canvasView.textsView.updateEditingViewStyle()
     }
 
-    func textStyleDidSelected(_ style: FontStyle) {
+    func textStyleDidSelected(_ style: TextStyle) {
+        self.textStyle = style
         canvasView.textsView.updateEditingViewStyle()
     }
 }
