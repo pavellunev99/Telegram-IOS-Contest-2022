@@ -11,7 +11,15 @@ final class EditorCanvasView: View {
 
     var asset: UIImage? {
         didSet {
+            guard let asset = asset else { return }
+
             assetImageView.image = asset
+
+            width?.constant = asset.size.width / 2
+            height?.constant = asset.size.height / 2
+
+            width?.isActive = true
+            height?.isActive = true
 
             containerView.setNeedsLayout()
             containerView.layoutIfNeeded()
@@ -28,6 +36,9 @@ final class EditorCanvasView: View {
     let drawView = DrawView()
     let textsView = TextsView()
 
+    private var height: NSLayoutConstraint?
+    private var width: NSLayoutConstraint?
+
     override func setup() {
         super.setup()
 
@@ -42,7 +53,7 @@ final class EditorCanvasView: View {
         containerView.isUserInteractionEnabled = false
 
         containerView.addSubview(assetImageView)
-        assetImageView.contentMode = .scaleAspectFit
+        //assetImageView.contentMode = .scaleAspectFit
         assetImageView.translatesAutoresizingMaskIntoConstraints = false
 
         containerView.addSubview(drawView)
@@ -64,7 +75,9 @@ final class EditorCanvasView: View {
         containerView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         containerView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        containerView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, constant: 1).isActive = true
+
+        width = containerView.widthAnchor.constraint(equalToConstant: 100)
+        height = containerView.heightAnchor.constraint(equalToConstant: 100)
 
         assetImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         assetImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
