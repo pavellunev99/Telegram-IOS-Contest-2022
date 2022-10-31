@@ -235,7 +235,7 @@ extension EditorToolsView {
         }
     }
 
-    fileprivate final class FontFamilySelectorView: View, UICollectionViewDelegate, UICollectionViewDataSource {
+    fileprivate final class FontFamilySelectorView: View, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
         weak var delegate: FontFamilySelectorViewDelegate?
 
@@ -306,6 +306,10 @@ extension EditorToolsView {
             collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 
             delegate?.textFontFamilyDidSelected(UIFont.familyNames[indexPath.row])
+        }
+
+        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            .zero
         }
     }
 

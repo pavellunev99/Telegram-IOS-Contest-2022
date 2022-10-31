@@ -9,6 +9,8 @@ import UIKit
 
 class ToolView: View {
 
+    var tool: EditorTool?
+
     let containerView = View()
     let bodyImageView = UIImageView()
     let topImageView = UIImageView()

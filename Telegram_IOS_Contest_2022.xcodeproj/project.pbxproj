@@ -46,6 +46,35 @@
 		34FF3DF3290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */; };
 		34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */; };
 		34FF3DF7290FDF9900DDC681 /* RainbowCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */; };
+		34FF3E5F291010CC00DDC681 /* ChartletBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */; };
+		34FF3E60291010CC00DDC681 /* Eraser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3D291010CB00DDC681 /* Eraser.swift */; };
+		34FF3E61291010CC00DDC681 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3E291010CB00DDC681 /* Printer.swift */; };
+		34FF3E62291010CC00DDC681 /* GlowingBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */; };
+		34FF3E63291010CC00DDC681 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E40291010CB00DDC681 /* Brush.swift */; };
+		34FF3E64291010CC00DDC681 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E42291010CB00DDC681 /* Canvas.swift */; };
+		34FF3E66291010CC00DDC681 /* ActionObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E44291010CB00DDC681 /* ActionObserver.swift */; };
+		34FF3E67291010CC00DDC681 /* DataObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E46291010CB00DDC681 /* DataObserver.swift */; };
+		34FF3E68291010CC00DDC681 /* CanvasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E47291010CB00DDC681 /* CanvasData.swift */; };
+		34FF3E69291010CC00DDC681 /* DataImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E48291010CB00DDC681 /* DataImporter.swift */; };
+		34FF3E6A291010CC00DDC681 /* DataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E49291010CB00DDC681 /* DataExporter.swift */; };
+		34FF3E6B291010CC00DDC681 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E4A291010CB00DDC681 /* Document.swift */; };
+		34FF3E6C291010CC00DDC681 /* LineStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E4C291010CC00DDC681 /* LineStrip.swift */; };
+		34FF3E6D291010CC00DDC681 /* MLLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E4D291010CC00DDC681 /* MLLine.swift */; };
+		34FF3E6E291010CC00DDC681 /* ElementGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E4E291010CC00DDC681 /* ElementGroup.swift */; };
+		34FF3E6F291010CC00DDC681 /* Chartlet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E4F291010CC00DDC681 /* Chartlet.swift */; };
+		34FF3E70291010CC00DDC681 /* PaintingGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E51291010CC00DDC681 /* PaintingGestureRecognizer.swift */; };
+		34FF3E71291010CC00DDC681 /* BezierGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E52291010CC00DDC681 /* BezierGenerator.swift */; };
+		34FF3E72291010CC00DDC681 /* WeakObjectBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E53291010CC00DDC681 /* WeakObjectBox.swift */; };
+		34FF3E73291010CC00DDC681 /* Maths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E54291010CC00DDC681 /* Maths.swift */; };
+		34FF3E74291010CC00DDC681 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E55291010CC00DDC681 /* Utils.swift */; };
+		34FF3E75291010CC00DDC681 /* MLError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E57291010CC00DDC681 /* MLError.swift */; };
+		34FF3E76291010CC00DDC681 /* RenderTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E58291010CC00DDC681 /* RenderTarget.swift */; };
+		34FF3E77291010CC00DDC681 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E59291010CC00DDC681 /* MetalView.swift */; };
+		34FF3E78291010CC00DDC681 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E5A291010CC00DDC681 /* Shaders.metal */; };
+		34FF3E79291010CC00DDC681 /* MLTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E5B291010CC00DDC681 /* MLTexture.swift */; };
+		34FF3E7A291010CC00DDC681 /* SnapshotTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E5C291010CC00DDC681 /* SnapshotTarget.swift */; };
+		34FF3E7B291010CC00DDC681 /* MLColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E5D291010CC00DDC681 /* MLColor.swift */; };
+		34FF3E7C291010CC00DDC681 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E5E291010CC00DDC681 /* Renderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +119,35 @@
 		34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+ColorsSelectorDelegate.swift"; sourceTree = "<group>"; };
 		34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorSelector+Spectrum.swift"; sourceTree = "<group>"; };
 		34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowCircle.swift; sourceTree = "<group>"; };
+		34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartletBrush.swift; sourceTree = "<group>"; };
+		34FF3E3D291010CB00DDC681 /* Eraser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eraser.swift; sourceTree = "<group>"; };
+		34FF3E3E291010CB00DDC681 /* Printer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowingBrush.swift; sourceTree = "<group>"; };
+		34FF3E40291010CB00DDC681 /* Brush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		34FF3E42291010CB00DDC681 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		34FF3E44291010CB00DDC681 /* ActionObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionObserver.swift; sourceTree = "<group>"; };
+		34FF3E46291010CB00DDC681 /* DataObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataObserver.swift; sourceTree = "<group>"; };
+		34FF3E47291010CB00DDC681 /* CanvasData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasData.swift; sourceTree = "<group>"; };
+		34FF3E48291010CB00DDC681 /* DataImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataImporter.swift; sourceTree = "<group>"; };
+		34FF3E49291010CB00DDC681 /* DataExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExporter.swift; sourceTree = "<group>"; };
+		34FF3E4A291010CB00DDC681 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		34FF3E4C291010CC00DDC681 /* LineStrip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineStrip.swift; sourceTree = "<group>"; };
+		34FF3E4D291010CC00DDC681 /* MLLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLLine.swift; sourceTree = "<group>"; };
+		34FF3E4E291010CC00DDC681 /* ElementGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElementGroup.swift; sourceTree = "<group>"; };
+		34FF3E4F291010CC00DDC681 /* Chartlet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chartlet.swift; sourceTree = "<group>"; };
+		34FF3E51291010CC00DDC681 /* PaintingGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingGestureRecognizer.swift; sourceTree = "<group>"; };
+		34FF3E52291010CC00DDC681 /* BezierGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierGenerator.swift; sourceTree = "<group>"; };
+		34FF3E53291010CC00DDC681 /* WeakObjectBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakObjectBox.swift; sourceTree = "<group>"; };
+		34FF3E54291010CC00DDC681 /* Maths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maths.swift; sourceTree = "<group>"; };
+		34FF3E55291010CC00DDC681 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		34FF3E57291010CC00DDC681 /* MLError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLError.swift; sourceTree = "<group>"; };
+		34FF3E58291010CC00DDC681 /* RenderTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderTarget.swift; sourceTree = "<group>"; };
+		34FF3E59291010CC00DDC681 /* MetalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
+		34FF3E5A291010CC00DDC681 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		34FF3E5B291010CC00DDC681 /* MLTexture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLTexture.swift; sourceTree = "<group>"; };
+		34FF3E5C291010CC00DDC681 /* SnapshotTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTarget.swift; sourceTree = "<group>"; };
+		34FF3E5D291010CC00DDC681 /* MLColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MLColor.swift; sourceTree = "<group>"; };
+		34FF3E5E291010CC00DDC681 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +257,12 @@
 		344B14C92905619700AC4C8E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				34FF3E3B291010CB00DDC681 /* Brush */,
+				34FF3E41291010CB00DDC681 /* Canvas */,
+				34FF3E45291010CB00DDC681 /* Data & Documents */,
+				34FF3E4B291010CC00DDC681 /* Elements */,
+				34FF3E50291010CC00DDC681 /* Math & Utils */,
+				34FF3E56291010CC00DDC681 /* MetalBase */,
 				344B14CA290561A700AC4C8E /* UIImage.swift */,
 				344B14DC2906AD1800AC4C8E /* SystemUptime.swift */,
 				34DED43E290DB05D0073FA61 /* Weak.swift */,
@@ -286,6 +350,77 @@
 			path = Subviews;
 			sourceTree = "<group>";
 		};
+		34FF3E3B291010CB00DDC681 /* Brush */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */,
+				34FF3E3D291010CB00DDC681 /* Eraser.swift */,
+				34FF3E3E291010CB00DDC681 /* Printer.swift */,
+				34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */,
+				34FF3E40291010CB00DDC681 /* Brush.swift */,
+			);
+			path = Brush;
+			sourceTree = "<group>";
+		};
+		34FF3E41291010CB00DDC681 /* Canvas */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E42291010CB00DDC681 /* Canvas.swift */,
+				34FF3E44291010CB00DDC681 /* ActionObserver.swift */,
+			);
+			path = Canvas;
+			sourceTree = "<group>";
+		};
+		34FF3E45291010CB00DDC681 /* Data & Documents */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E46291010CB00DDC681 /* DataObserver.swift */,
+				34FF3E47291010CB00DDC681 /* CanvasData.swift */,
+				34FF3E48291010CB00DDC681 /* DataImporter.swift */,
+				34FF3E49291010CB00DDC681 /* DataExporter.swift */,
+				34FF3E4A291010CB00DDC681 /* Document.swift */,
+			);
+			path = "Data & Documents";
+			sourceTree = "<group>";
+		};
+		34FF3E4B291010CC00DDC681 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E4C291010CC00DDC681 /* LineStrip.swift */,
+				34FF3E4D291010CC00DDC681 /* MLLine.swift */,
+				34FF3E4E291010CC00DDC681 /* ElementGroup.swift */,
+				34FF3E4F291010CC00DDC681 /* Chartlet.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		34FF3E50291010CC00DDC681 /* Math & Utils */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E51291010CC00DDC681 /* PaintingGestureRecognizer.swift */,
+				34FF3E52291010CC00DDC681 /* BezierGenerator.swift */,
+				34FF3E53291010CC00DDC681 /* WeakObjectBox.swift */,
+				34FF3E54291010CC00DDC681 /* Maths.swift */,
+				34FF3E55291010CC00DDC681 /* Utils.swift */,
+			);
+			path = "Math & Utils";
+			sourceTree = "<group>";
+		};
+		34FF3E56291010CC00DDC681 /* MetalBase */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3E57291010CC00DDC681 /* MLError.swift */,
+				34FF3E58291010CC00DDC681 /* RenderTarget.swift */,
+				34FF3E59291010CC00DDC681 /* MetalView.swift */,
+				34FF3E5A291010CC00DDC681 /* Shaders.metal */,
+				34FF3E5B291010CC00DDC681 /* MLTexture.swift */,
+				34FF3E5C291010CC00DDC681 /* SnapshotTarget.swift */,
+				34FF3E5D291010CC00DDC681 /* MLColor.swift */,
+				34FF3E5E291010CC00DDC681 /* Renderer.swift */,
+			);
+			path = MetalBase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,21 +497,35 @@
 				34EACA4C28FB399500D3A167 /* Button.swift in Sources */,
 				343CB76A28F346B2003B38AC /* SelectPhotoCell.swift in Sources */,
 				34ABA34628F8B196000330C6 /* Editor+DrawView.swift in Sources */,
+				34FF3E6E291010CC00DDC681 /* ElementGroup.swift in Sources */,
 				34FF3DF3290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift in Sources */,
+				34FF3E6F291010CC00DDC681 /* Chartlet.swift in Sources */,
+				34FF3E6C291010CC00DDC681 /* LineStrip.swift in Sources */,
 				34ABA33928F89C01000330C6 /* ViewController.swift in Sources */,
 				343CB76528F33DCC003B38AC /* RoundedButton.swift in Sources */,
+				34FF3E69291010CC00DDC681 /* DataImporter.swift in Sources */,
+				34FF3E60291010CC00DDC681 /* Eraser.swift in Sources */,
+				34FF3E6D291010CC00DDC681 /* MLLine.swift in Sources */,
+				34FF3E78291010CC00DDC681 /* Shaders.metal in Sources */,
 				34FF3DF7290FDF9900DDC681 /* RainbowCircle.swift in Sources */,
+				34FF3E71291010CC00DDC681 /* BezierGenerator.swift in Sources */,
+				34FF3E72291010CC00DDC681 /* WeakObjectBox.swift in Sources */,
 				34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */,
 				344B14D92906743400AC4C8E /* EditorTool.swift in Sources */,
 				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
+				34FF3E5F291010CC00DDC681 /* ChartletBrush.swift in Sources */,
 				34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */,
 				343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */,
 				343CB76328F33DB1003B38AC /* View.swift in Sources */,
 				34DED43D290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift in Sources */,
+				34FF3E76291010CC00DDC681 /* RenderTarget.swift in Sources */,
 				34DED43F290DB05D0073FA61 /* Weak.swift in Sources */,
 				344B14DD2906AD1800AC4C8E /* SystemUptime.swift in Sources */,
+				34FF3E7C291010CC00DDC681 /* Renderer.swift in Sources */,
 				344B14C829055FA900AC4C8E /* Editor+TextsView.swift in Sources */,
 				34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */,
+				34FF3E7B291010CC00DDC681 /* MLColor.swift in Sources */,
+				34FF3E74291010CC00DDC681 /* Utils.swift in Sources */,
 				344B14DB2906ACDC00AC4C8E /* OnDrawAnimatedView.swift in Sources */,
 				34FF3DEE290FC81100DDC681 /* ColorSelectorViewController.swift in Sources */,
 				344B14CF2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift in Sources */,
@@ -384,14 +533,29 @@
 				343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */,
 				34DED441290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift in Sources */,
 				34FF3DE5290EDA1900DDC681 /* Editor+ToolSelectorView.swift in Sources */,
+				34FF3E63291010CC00DDC681 /* Brush.swift in Sources */,
+				34FF3E64291010CC00DDC681 /* Canvas.swift in Sources */,
+				34FF3E7A291010CC00DDC681 /* SnapshotTarget.swift in Sources */,
 				34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */,
 				34FF3DF1290FC9B600DDC681 /* ColorSelector+NavigationBar.swift in Sources */,
+				34FF3E70291010CC00DDC681 /* PaintingGestureRecognizer.swift in Sources */,
+				34FF3E67291010CC00DDC681 /* DataObserver.swift in Sources */,
 				344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */,
 				34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */,
+				34FF3E62291010CC00DDC681 /* GlowingBrush.swift in Sources */,
 				34FF3DE8290EDBAE00DDC681 /* Editor+ToolView.swift in Sources */,
 				344B14CB290561A700AC4C8E /* UIImage.swift in Sources */,
+				34FF3E79291010CC00DDC681 /* MLTexture.swift in Sources */,
+				34FF3E73291010CC00DDC681 /* Maths.swift in Sources */,
+				34FF3E75291010CC00DDC681 /* MLError.swift in Sources */,
+				34FF3E6A291010CC00DDC681 /* DataExporter.swift in Sources */,
+				34FF3E61291010CC00DDC681 /* Printer.swift in Sources */,
+				34FF3E6B291010CC00DDC681 /* Document.swift in Sources */,
+				34FF3E66291010CC00DDC681 /* ActionObserver.swift in Sources */,
 				344B14D12905668800AC4C8E /* EditorViewController+NavigationView.swift in Sources */,
+				34FF3E68291010CC00DDC681 /* CanvasData.swift in Sources */,
 				34EACA4428FB2FBF00D3A167 /* TouchesScrollView.swift in Sources */,
+				34FF3E77291010CC00DDC681 /* MetalView.swift in Sources */,
 				343CB76028F33D7C003B38AC /* EditorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,6 +702,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.development.telegramContest2022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -569,6 +736,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.development.telegramContest2022;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

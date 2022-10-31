@@ -64,9 +64,6 @@ final class EditorCanvasView: View {
         containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         containerView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
 
-        containerView.widthAnchor.constraint(equalTo: assetImageView.widthAnchor).isActive = true
-        containerView.heightAnchor.constraint(equalTo: assetImageView.heightAnchor).isActive = true
-
         assetImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         assetImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         assetImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true

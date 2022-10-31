@@ -72,3 +72,10 @@ extension EditorViewController: TextPropertiesSelectorViewDelegate {
         canvasView.textsView.updateEditingViewStyle()
     }
 }
+
+extension EditorViewController: ToolSelectorViewDelegate {
+
+    func toolDidSelected(_ tool: EditorTool) {
+        canvasView.drawView.selectTool(tool)
+    }
+}

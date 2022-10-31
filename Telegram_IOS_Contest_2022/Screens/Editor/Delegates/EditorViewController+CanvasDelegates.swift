@@ -7,13 +7,6 @@
 
 import UIKit
 
-extension EditorViewController: EditorDrawViewPropertiesDelegate {
-
-    func selectedColor() -> UIColor {
-        drawColor
-    }
-}
-
 extension EditorViewController: EditorTextsViewDelegate {
 
     func editorTextsViewFont() -> UIFont {

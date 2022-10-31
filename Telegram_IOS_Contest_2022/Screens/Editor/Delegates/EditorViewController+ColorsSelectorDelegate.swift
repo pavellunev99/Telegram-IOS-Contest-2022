@@ -15,5 +15,7 @@ extension EditorViewController: ColorSelectorViewDelegate {
 
     func colorSelectorDidSelectColor(_ color: UIColor) {
         drawColor = color
+
+        canvasView.drawView.selectColor(color)
     }
 }

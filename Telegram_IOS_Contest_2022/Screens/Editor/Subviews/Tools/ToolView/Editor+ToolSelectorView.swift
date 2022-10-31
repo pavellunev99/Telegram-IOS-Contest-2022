@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ToolSelectorViewDelegate: AnyObject {
+    func toolDidSelected(_ tool: EditorTool)
+}
+
 final class ToolSelectorView: View {
+
+    weak var delegate: ToolSelectorViewDelegate?
 
     let availableTools: [EditorTool] = [
         .init(toolType: .pen),
@@ -56,6 +62,7 @@ final class ToolSelectorView: View {
                 toolView = EraserToolView()
             }
 
+            toolView.tool = $0
             toolView.addTarget(self, action: #selector(tapTool), for: .touchUpInside)
             stackView.addArrangedSubview(toolView)
         }
@@ -67,6 +74,10 @@ final class ToolSelectorView: View {
             selectedTool = nil
         } else {
             selectedTool = toolView
+
+            if let tool = toolView.tool {
+                delegate?.toolDidSelected(tool)
+            }
         }
 
         stackView.arrangedSubviews.forEach {

@@ -41,7 +41,6 @@ final class EditorViewController: ViewController {
 
         canvasView.translatesAutoresizingMaskIntoConstraints = false
         canvasView.layer.mask = gradientLayer
-        canvasView.drawView.delegate = self
         canvasView.textsView.delegate = self
 
         gradientLayer.colors = [UIColor.black.withAlphaComponent(0.5).cgColor,
@@ -63,6 +62,7 @@ final class EditorViewController: ViewController {
         toolsView.translatesAutoresizingMaskIntoConstraints = false
         toolsView.delegate = self
         toolsView.centerView.textsSelectors.delegate = self
+        toolsView.centerView.toolsSelector.delegate = self
         view.addSubview(toolsView)
 
         activityIndicator.hidesWhenStopped = true
