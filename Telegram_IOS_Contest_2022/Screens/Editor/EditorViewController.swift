@@ -8,6 +8,11 @@
 import UIKit
 import Photos
 
+enum EditorViewState {
+    case draw
+    case text
+}
+
 final class EditorViewController: ViewController {
 
     var asset: PHAsset? {
@@ -33,6 +38,12 @@ final class EditorViewController: ViewController {
     var textColor: UIColor = .white
     var textAlignment: NSTextAlignment = .left
     var textStyle: TextStyle = .none
+
+    var viewState: EditorViewState = .draw {
+        didSet {
+            _updateState()
+        }
+    }
 
     override func setup() {
         super.setup()
@@ -80,6 +91,7 @@ final class EditorViewController: ViewController {
         }
 
         centerViewDrawEditorSelected()
+        _updateState()
     }
 
     override func setupSizes() {
@@ -102,6 +114,15 @@ final class EditorViewController: ViewController {
         activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
+    private func _updateState() {
+        switch viewState {
+        case .draw:
+            canvasView.enableDrawEditor()
+        case .text:
+            canvasView.enableTextEditor()
+        }
+    }
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         gradientLayer.frame = canvasView.frame
@@ -113,7 +134,7 @@ final class EditorViewController: ViewController {
         let options = PHImageRequestOptions()
         options.version = .original
         options.isNetworkAccessAllowed = true
-        options.deliveryMode = .highQualityFormat
+        options.deliveryMode = .fastFormat
 
         activityIndicator.startAnimating()
 

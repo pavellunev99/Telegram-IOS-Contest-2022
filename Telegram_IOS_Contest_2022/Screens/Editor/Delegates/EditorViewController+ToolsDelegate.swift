@@ -37,11 +37,11 @@ extension EditorViewController: EditorToolsViewDelegate {
     }
 
     func centerViewDrawEditorSelected() {
-        canvasView.enableDrawEditor()
+        viewState = .draw
     }
 
     func centerViewTextEditorSelected() {
-        canvasView.enableTextEditor()
+        viewState = .text
     }
 }
 

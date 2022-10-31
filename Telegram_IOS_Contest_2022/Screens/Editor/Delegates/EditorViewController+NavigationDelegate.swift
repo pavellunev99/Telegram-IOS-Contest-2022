@@ -22,7 +22,7 @@ extension EditorViewController: EditorNavigationViewDelegate {
     }
 
     func navigationViewTapUndo() {
-
+        canvasView.drawView.undo()
     }
 
     func navigationViewTapZoomOut() {

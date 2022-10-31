@@ -72,6 +72,7 @@ extension EditorCanvasView {
 
                 let eraser = try! canvas.registerBrush(name: "Eraser") as Eraser
                 eraser.opacity = 1
+                eraser.pointSize = 20
 
                 brushes = [pen, pencil, brush, glow, eraser]
 
@@ -100,7 +101,7 @@ extension EditorCanvasView {
             case .lasso:
                 break
             case .eraser:
-                brushes[5].use()
+                brushes[4].use()
             }
         }
 
@@ -110,6 +111,10 @@ extension EditorCanvasView {
 
         func clear() {
             canvas.clear()
+        }
+
+        func undo() {
+            canvas.undo()
         }
 
         func getImage() -> UIImage? {
