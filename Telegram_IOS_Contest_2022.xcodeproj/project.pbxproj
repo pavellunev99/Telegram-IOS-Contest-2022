@@ -46,7 +46,6 @@
 		34FF3DF3290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */; };
 		34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */; };
 		34FF3DF7290FDF9900DDC681 /* RainbowCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */; };
-		34FF3E5F291010CC00DDC681 /* ChartletBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */; };
 		34FF3E60291010CC00DDC681 /* Eraser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3D291010CB00DDC681 /* Eraser.swift */; };
 		34FF3E61291010CC00DDC681 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3E291010CB00DDC681 /* Printer.swift */; };
 		34FF3E62291010CC00DDC681 /* GlowingBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */; };
@@ -119,7 +118,6 @@
 		34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+ColorsSelectorDelegate.swift"; sourceTree = "<group>"; };
 		34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorSelector+Spectrum.swift"; sourceTree = "<group>"; };
 		34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowCircle.swift; sourceTree = "<group>"; };
-		34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartletBrush.swift; sourceTree = "<group>"; };
 		34FF3E3D291010CB00DDC681 /* Eraser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eraser.swift; sourceTree = "<group>"; };
 		34FF3E3E291010CB00DDC681 /* Printer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlowingBrush.swift; sourceTree = "<group>"; };
@@ -353,7 +351,6 @@
 		34FF3E3B291010CB00DDC681 /* Brush */ = {
 			isa = PBXGroup;
 			children = (
-				34FF3E3C291010CB00DDC681 /* ChartletBrush.swift */,
 				34FF3E3D291010CB00DDC681 /* Eraser.swift */,
 				34FF3E3E291010CB00DDC681 /* Printer.swift */,
 				34FF3E3F291010CB00DDC681 /* GlowingBrush.swift */,
@@ -513,7 +510,6 @@
 				34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */,
 				344B14D92906743400AC4C8E /* EditorTool.swift in Sources */,
 				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
-				34FF3E5F291010CC00DDC681 /* ChartletBrush.swift in Sources */,
 				34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */,
 				343CB74428F33BCC003B38AC /* AppDelegate.swift in Sources */,
 				343CB76328F33DB1003B38AC /* View.swift in Sources */,
