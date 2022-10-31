@@ -84,10 +84,12 @@ final class EditorViewController: ViewController {
         colorSelectorViewController.modalPresentationStyle = .formSheet
         colorSelectorViewController.delegate = self
 
-        if let sheet = colorSelectorViewController.sheetPresentationController {
-            sheet.detents = [.medium(), .large()]
-            sheet.prefersGrabberVisible = false
-            sheet.prefersEdgeAttachedInCompactHeight = true
+        if #available(iOS 15.0, *) {
+            if let sheet = colorSelectorViewController.sheetPresentationController {
+                sheet.detents = [.medium(), .large()]
+                sheet.prefersGrabberVisible = false
+                sheet.prefersEdgeAttachedInCompactHeight = true
+            }
         }
 
         centerViewDrawEditorSelected()

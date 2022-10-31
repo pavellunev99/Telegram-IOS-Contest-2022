@@ -25,7 +25,7 @@ final class PhotosService {
 extension PhotosService: PhotosInteractor {
 
     var authorizationStatus: PHAuthorizationStatus {
-        PHPhotoLibrary.authorizationStatus(for: .readWrite)
+        PHPhotoLibrary.authorizationStatus()
     }
 
     var assetsFetchResult: PHFetchResult<PHAsset> {
@@ -41,7 +41,7 @@ extension PhotosService: PhotosInteractor {
     }
 
     func requestAccess(completion: @escaping (PHAuthorizationStatus) -> Void) {
-        PHPhotoLibrary.requestAuthorization(for: .readWrite) { (status) in
+        PHPhotoLibrary.requestAuthorization() { (status) in
             DispatchQueue.main.async {
                 completion(status)
             }
