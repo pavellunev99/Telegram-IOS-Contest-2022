@@ -46,6 +46,12 @@ class StyledTextView: View {
         }
     }
 
+    var toolBar: UIView? {
+        didSet {
+            //textView.inputAccessoryView = toolBar
+        }
+    }
+
     var textAlignment: NSTextAlignment? {
         didSet {
             textView.textAlignment = textAlignment ?? .left
@@ -67,6 +73,17 @@ class StyledTextView: View {
         textView.backgroundColor = .clear
         textView.autocorrectionType = .no
         addSubview(textView)
+
+        let bar = UIToolbar()
+        let done = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneTap))
+        bar.items = [done]
+        bar.sizeToFit()
+        textView.inputAccessoryView = bar
+    }
+
+    @objc
+    private func doneTap() {
+        textView.resignFirstResponder()
     }
 
     override func setupSizes() {

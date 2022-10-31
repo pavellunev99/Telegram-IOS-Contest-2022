@@ -130,6 +130,7 @@
 				343CB75828F33CE0003B38AC /* AccessLibrary */,
 				343CB75928F33CF0003B38AC /* SelectPhoto */,
 				343CB75A28F33D0A003B38AC /* Editor */,
+				34FF3DEC290FAE5600DDC681 /* ColorSelector */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -253,6 +254,13 @@
 				34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */,
 			);
 			path = ToolView;
+			sourceTree = "<group>";
+		};
+		34FF3DEC290FAE5600DDC681 /* ColorSelector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ColorSelector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

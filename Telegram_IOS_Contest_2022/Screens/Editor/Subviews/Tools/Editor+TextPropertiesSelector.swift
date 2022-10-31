@@ -244,10 +244,6 @@ extension EditorToolsView {
         override func setup() {
             super.setup()
 
-            UIFont.familyNames.forEach {
-                print(UIFont.fontNames(forFamilyName: $0))
-            }
-
             collectionView.register(FontFamilyCell.self, forCellWithReuseIdentifier: "cell")
             collectionView.backgroundColor = .clear
             collectionView.delegate = self
@@ -271,6 +267,7 @@ extension EditorToolsView {
             layout.minimumLineSpacing = 12
             layout.minimumInteritemSpacing = 12
             layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            layout.itemSize.height = 30
             layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
 
             collectionView.setCollectionViewLayout(layout, animated: true)

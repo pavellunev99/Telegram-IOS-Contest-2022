@@ -10,11 +10,16 @@ import Photos
 
 final class EditorViewController: ViewController {
 
-    var asset: PHAsset
+    var asset: PHAsset? {
+        didSet {
+            _requestImage()
+        }
+    }
 
     let navigationView = EditorNavigationView()
     let canvasView = EditorCanvasView()
     let toolsView = EditorToolsView()
+    let activityIndicator = UIActivityIndicatorView(style: .medium)
 
     let gradientLayer = CAGradientLayer()
 
@@ -26,23 +31,6 @@ final class EditorViewController: ViewController {
     var textColor: UIColor = .white
     var textAlignment: NSTextAlignment = .left
     var textStyle: TextStyle = .none
-
-    init(asset: PHAsset) {
-        self.asset = asset
-        
-        super.init(nibName: nil, bundle: nil)
-
-        let options = PHImageRequestOptions()
-        options.version = .original
-
-        PHImageManager.default().requestImage(for: asset, targetSize: .zero, contentMode: .aspectFit, options: options) { [weak self] image, _ in
-            self?.canvasView.asset = image
-        }
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func setup() {
         super.setup()
@@ -75,6 +63,11 @@ final class EditorViewController: ViewController {
         toolsView.centerView.textsSelectors.delegate = self
         view.addSubview(toolsView)
 
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.color = .white
+        view.addSubview(activityIndicator)
+
         centerViewDrawEditorSelected()
     }
 
@@ -93,10 +86,29 @@ final class EditorViewController: ViewController {
         toolsView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         toolsView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         toolsView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         gradientLayer.frame = canvasView.frame
+    }
+
+    private func _requestImage() {
+        guard let asset = asset else { return }
+
+        let options = PHImageRequestOptions()
+        options.version = .original
+        options.isNetworkAccessAllowed = true
+        options.deliveryMode = .highQualityFormat
+
+        activityIndicator.startAnimating()
+
+        PHImageManager.default().requestImage(for: asset, targetSize: .zero, contentMode: .aspectFit, options: options) { [weak self] image, _ in
+            self?.activityIndicator.stopAnimating()
+            self?.canvasView.asset = image
+        }
     }
 }

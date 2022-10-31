@@ -31,4 +31,8 @@ extension EditorViewController: EditorTextsViewDelegate {
     func editorTextStyle() -> TextStyle {
         textStyle
     }
+
+    func editorKeyboardToolBar() -> UIView {
+        toolsView.centerView.textsSelectors
+    }
 }

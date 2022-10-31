@@ -18,6 +18,8 @@ protocol PhotosInteractor: AnyObject {
 final class PhotosService {
 
     static let shared: PhotosInteractor = PhotosService()
+
+    private var _fetchResult: PHFetchResult<PHAsset>?
 }
 
 extension PhotosService: PhotosInteractor {
@@ -27,8 +29,15 @@ extension PhotosService: PhotosInteractor {
     }
 
     var assetsFetchResult: PHFetchResult<PHAsset> {
-        let fetchOptions = PHFetchOptions()
-        return PHAsset.fetchAssets(with: .image, options: fetchOptions)
+        if let _fetchResult = _fetchResult {
+            return _fetchResult
+        } else {
+            let fetchOptions = PHFetchOptions()
+            fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+            let result = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+            _fetchResult = result
+            return result
+        }
     }
 
     func requestAccess(completion: @escaping (PHAuthorizationStatus) -> Void) {

@@ -12,6 +12,7 @@ protocol EditorTextsViewDelegate: AnyObject {
     func editorTextsViewColor() -> UIColor
     func editorTextsViewAlignment() -> NSTextAlignment
     func editorTextStyle() -> TextStyle
+    func editorKeyboardToolBar() -> UIView
 }
 
 extension EditorCanvasView {
@@ -66,6 +67,7 @@ extension EditorCanvasView {
             textView.textColor = delegate?.editorTextsViewColor()
             textView.textAlignment = delegate?.editorTextsViewAlignment()
             textView.textStyle = delegate?.editorTextStyle()
+            //textView.toolBar = delegate?.editorKeyboardToolBar()
 
             addSubview(textView)
             textView.centerPoint = point
@@ -173,6 +175,12 @@ extension EditorCanvasView.TextsView {
         var textAlignment: NSTextAlignment? {
             didSet {
                 textView.textAlignment = textAlignment
+            }
+        }
+
+        var toolBar: UIView? {
+            didSet {
+                textView.toolBar = toolBar
             }
         }
 

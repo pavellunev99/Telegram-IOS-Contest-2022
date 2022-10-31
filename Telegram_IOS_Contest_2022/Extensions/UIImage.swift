@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Photos
 
 extension UIImage {
 
@@ -17,19 +18,20 @@ extension UIImage {
         let bounds2 = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
 
-        let ctx = CGContext(data: nil,
-                            width: cgImage.width,
-                            height: cgImage.height,
-                            bitsPerComponent: cgImage.bitsPerComponent,
-                            bytesPerRow: cgImage.bytesPerRow,
-                            space: cgImage.colorSpace!,
-                            bitmapInfo: bitmapInfo.rawValue)!
-
+        guard let ctx = CGContext(data: nil,
+                                  width: cgImage.width,
+                                  height: cgImage.height,
+                                  bitsPerComponent: cgImage.bitsPerComponent,
+                                  bytesPerRow: cgImage.bytesPerRow,
+                                  space: cgImage.colorSpace!,
+                                  bitmapInfo: bitmapInfo.rawValue)
+        else {
+            print("image context is nil")
+            return nil
+        }
 
         ctx.draw(cgImage, in: bounds1, byTiling: false)
-        //CGContextDrawImage(ctx, bounds1, cgImage)
         ctx.setBlendMode(.normal)
-        //CGContextDrawImage(ctx, bounds2, image.cgImage)
         ctx.draw(image.cgImage!, in: bounds2, byTiling: false)
 
         if let bitmapImage = ctx.makeImage() {
@@ -56,5 +58,32 @@ extension UIImage {
         UIGraphicsEndImageContext()
 
         return image
+    }
+}
+
+extension UIImageView {
+
+    func fetchImage(asset: PHAsset, contentMode: PHImageContentMode, targetSize: CGSize) {
+
+        let options = PHImageRequestOptions()
+        options.version = .current
+
+        PHImageManager.default().requestImage(for: asset,
+                                              targetSize: targetSize,
+                                              contentMode: contentMode,
+                                              options: options) { image, _ in
+            guard let image = image else { return }
+
+            switch contentMode {
+            case .aspectFill:
+                self.contentMode = .scaleAspectFill
+            case .aspectFit:
+                self.contentMode = .scaleAspectFit
+            @unknown default:
+                self.contentMode = .scaleAspectFill
+            }
+
+            self.image = image
+        }
     }
 }

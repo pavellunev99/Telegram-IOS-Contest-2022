@@ -12,13 +12,19 @@ final class EditorCanvasView: View {
     var asset: UIImage? {
         didSet {
             assetImageView.image = asset
+
+            containerView.setNeedsLayout()
+            containerView.layoutIfNeeded()
+
+            setNeedsLayout()
+            layoutIfNeeded()
         }
     }
 
     private let scrollView = TouchesScrollView()
-    private let containerView = UIView()
 
-    private let assetImageView = UIImageView()
+    private let containerView = UIView()
+    let assetImageView = UIImageView()
     let drawView = DrawView()
     let textsView = TextsView()
 
@@ -58,6 +64,9 @@ final class EditorCanvasView: View {
         containerView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         containerView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
 
+        containerView.widthAnchor.constraint(equalTo: assetImageView.widthAnchor).isActive = true
+        containerView.heightAnchor.constraint(equalTo: assetImageView.heightAnchor).isActive = true
+
         assetImageView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         assetImageView.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
         assetImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
@@ -77,38 +86,21 @@ final class EditorCanvasView: View {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        let scrollViewFrame = scrollView.frame
-        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
-        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
-        let minScale = min(scaleWidth, scaleHeight);
+        // MARK: Scale
 
         scrollView.maximumZoomScale = 10
         scrollView.minimumZoomScale = 0.1;
-        //scrollView.zoomScale = 10;
+        scrollView.zoomScale = 0.2;
 
-        centerScrollViewContents()
-    }
+        // MARK: Insets
 
-    func centerScrollViewContents() {
-        let boundsSize = scrollView.bounds.size
-        var contentsFrame = containerView.frame
+        let offsetY: CGFloat
+        let offsetX: CGFloat
 
-        contentsFrame.origin.x = (boundsSize.width - contentsFrame.size.width) / 2.0
-        contentsFrame.origin.y = (boundsSize.height - contentsFrame.size.height) / 2.0
+        offsetX = max((scrollView.bounds.width - containerView.frame.width) * 0.5, 0)
+        offsetY = max((scrollView.bounds.height - containerView.frame.height) * 0.5, 0)
 
-//        if contentsFrame.size.width < boundsSize.width {
-//            contentsFrame.origin.x = (boundsSize.width - contentsFrame.size.width) / 2.0
-//        } else {
-//            contentsFrame.origin.x = 0.0
-//        }
-//
-//        if contentsFrame.size.height < boundsSize.height {
-//            contentsFrame.origin.y = (boundsSize.height - contentsFrame.size.height) / 2.0
-//        } else {
-//            contentsFrame.origin.y = 0.0
-//        }
-
-        containerView.frame = contentsFrame
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
     }
 
     func clearAll() {
@@ -123,11 +115,11 @@ final class EditorCanvasView: View {
 
         var outputImage = assetImage
 
-        if let drawImage = drawImage {
+        if let drawImage = drawImage, drawImage.size != .zero {
             outputImage = outputImage?.compositeWith(image: drawImage)
         }
 
-        if let textsImage = textsImage {
+        if let textsImage = textsImage, textsImage.size != .zero {
             outputImage = outputImage?.compositeWith(image: textsImage)
         }
 
