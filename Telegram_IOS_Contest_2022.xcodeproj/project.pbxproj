@@ -39,6 +39,8 @@
 		34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */; };
 		34EACA4C28FB399500D3A167 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EACA4B28FB399500D3A167 /* Button.swift */; };
 		34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */; };
+		34FF3DE5290EDA1900DDC681 /* Editor+ToolSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE4290EDA1900DDC681 /* Editor+ToolSelectorView.swift */; };
+		34FF3DE8290EDBAE00DDC681 /* Editor+ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		34EACA4928FB373300D3A167 /* Editor+ToolsCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolsCenterView.swift"; sourceTree = "<group>"; };
 		34EACA4B28FB399500D3A167 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextView.swift; sourceTree = "<group>"; };
+		34FF3DE4290EDA1900DDC681 /* Editor+ToolSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolSelectorView.swift"; sourceTree = "<group>"; };
+		34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,7 +235,7 @@
 		34ABA34428F8AD29000330C6 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				344B14D82906743400AC4C8E /* EditorTool.swift */,
+				34FF3DE6290EDA9800DDC681 /* ToolView */,
 				34ABA34028F8A0B3000330C6 /* Editor+ToolsView.swift */,
 				34EACA4528FB36F600D3A167 /* Editor+ToolsLeftView.swift */,
 				34EACA4728FB370700D3A167 /* Editor+ToolsRightView.swift */,
@@ -239,6 +243,16 @@
 				34DED440290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		34FF3DE6290EDA9800DDC681 /* ToolView */ = {
+			isa = PBXGroup;
+			children = (
+				344B14D82906743400AC4C8E /* EditorTool.swift */,
+				34FF3DE4290EDA1900DDC681 /* Editor+ToolSelectorView.swift */,
+				34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */,
+			);
+			path = ToolView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,9 +348,11 @@
 				34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */,
 				343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */,
 				34DED441290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift in Sources */,
+				34FF3DE5290EDA1900DDC681 /* Editor+ToolSelectorView.swift in Sources */,
 				34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */,
 				344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */,
 				34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */,
+				34FF3DE8290EDBAE00DDC681 /* Editor+ToolView.swift in Sources */,
 				344B14CB290561A700AC4C8E /* UIImage.swift in Sources */,
 				344B14D12905668800AC4C8E /* EditorViewController+NavigationView.swift in Sources */,
 				34EACA4428FB2FBF00D3A167 /* TouchesScrollView.swift in Sources */,

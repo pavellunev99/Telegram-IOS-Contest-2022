@@ -10,8 +10,8 @@ import Foundation
 struct EditorTool {
 
     enum ToolType {
+        case pen
         case brush
-        case marker
         case neon
         case pencil
         case lasso
