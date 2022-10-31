@@ -41,6 +41,11 @@
 		34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */; };
 		34FF3DE5290EDA1900DDC681 /* Editor+ToolSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE4290EDA1900DDC681 /* Editor+ToolSelectorView.swift */; };
 		34FF3DE8290EDBAE00DDC681 /* Editor+ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */; };
+		34FF3DEE290FC81100DDC681 /* ColorSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DED290FC81100DDC681 /* ColorSelectorViewController.swift */; };
+		34FF3DF1290FC9B600DDC681 /* ColorSelector+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF0290FC9B600DDC681 /* ColorSelector+NavigationBar.swift */; };
+		34FF3DF3290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */; };
+		34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */; };
+		34FF3DF7290FDF9900DDC681 /* RainbowCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +85,11 @@
 		34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledTextView.swift; sourceTree = "<group>"; };
 		34FF3DE4290EDA1900DDC681 /* Editor+ToolSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolSelectorView.swift"; sourceTree = "<group>"; };
 		34FF3DE7290EDBAE00DDC681 /* Editor+ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+ToolView.swift"; sourceTree = "<group>"; };
+		34FF3DED290FC81100DDC681 /* ColorSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorViewController.swift; sourceTree = "<group>"; };
+		34FF3DF0290FC9B600DDC681 /* ColorSelector+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorSelector+NavigationBar.swift"; sourceTree = "<group>"; };
+		34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EditorViewController+ColorsSelectorDelegate.swift"; sourceTree = "<group>"; };
+		34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ColorSelector+Spectrum.swift"; sourceTree = "<group>"; };
+		34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowCircle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +183,7 @@
 				344B14D62905746E00AC4C8E /* BlurView.swift */,
 				344B14DA2906ACDC00AC4C8E /* OnDrawAnimatedView.swift */,
 				34FF3DE2290EC22E00DDC681 /* StyledTextView.swift */,
+				34FF3DF6290FDF9900DDC681 /* RainbowCircle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 				344B14CE2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift */,
 				344B14D42905701900AC4C8E /* EditorViewController+NavigationDelegate.swift */,
 				34DED43C290DAF2C0073FA61 /* EditorViewController+CanvasDelegates.swift */,
+				34FF3DF2290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -259,8 +271,19 @@
 		34FF3DEC290FAE5600DDC681 /* ColorSelector */ = {
 			isa = PBXGroup;
 			children = (
+				34FF3DEF290FC99B00DDC681 /* Subviews */,
+				34FF3DED290FC81100DDC681 /* ColorSelectorViewController.swift */,
 			);
 			path = ColorSelector;
+			sourceTree = "<group>";
+		};
+		34FF3DEF290FC99B00DDC681 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				34FF3DF0290FC9B600DDC681 /* ColorSelector+NavigationBar.swift */,
+				34FF3DF4290FD89000DDC681 /* ColorSelector+Spectrum.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,8 +362,11 @@
 				34EACA4C28FB399500D3A167 /* Button.swift in Sources */,
 				343CB76A28F346B2003B38AC /* SelectPhotoCell.swift in Sources */,
 				34ABA34628F8B196000330C6 /* Editor+DrawView.swift in Sources */,
+				34FF3DF3290FD2EC00DDC681 /* EditorViewController+ColorsSelectorDelegate.swift in Sources */,
 				34ABA33928F89C01000330C6 /* ViewController.swift in Sources */,
 				343CB76528F33DCC003B38AC /* RoundedButton.swift in Sources */,
+				34FF3DF7290FDF9900DDC681 /* RainbowCircle.swift in Sources */,
+				34FF3DF5290FD89000DDC681 /* ColorSelector+Spectrum.swift in Sources */,
 				344B14D92906743400AC4C8E /* EditorTool.swift in Sources */,
 				34EACA4A28FB373300D3A167 /* Editor+ToolsCenterView.swift in Sources */,
 				34FF3DE3290EC22E00DDC681 /* StyledTextView.swift in Sources */,
@@ -352,12 +378,14 @@
 				344B14C829055FA900AC4C8E /* Editor+TextsView.swift in Sources */,
 				34ABA33F28F8A0A6000330C6 /* Editor+CanvasView.swift in Sources */,
 				344B14DB2906ACDC00AC4C8E /* OnDrawAnimatedView.swift in Sources */,
+				34FF3DEE290FC81100DDC681 /* ColorSelectorViewController.swift in Sources */,
 				344B14CF2905664C00AC4C8E /* EditorViewController+ToolsDelegate.swift in Sources */,
 				34EACA4828FB370700D3A167 /* Editor+ToolsRightView.swift in Sources */,
 				343CB75E28F33D5E003B38AC /* SelectPhotoViewController.swift in Sources */,
 				34DED441290DDBE40073FA61 /* Editor+TextPropertiesSelector.swift in Sources */,
 				34FF3DE5290EDA1900DDC681 /* Editor+ToolSelectorView.swift in Sources */,
 				34EACA4628FB36F600D3A167 /* Editor+ToolsLeftView.swift in Sources */,
+				34FF3DF1290FC9B600DDC681 /* ColorSelector+NavigationBar.swift in Sources */,
 				344B14D52905701900AC4C8E /* EditorViewController+NavigationDelegate.swift in Sources */,
 				34ABA34128F8A0B3000330C6 /* Editor+ToolsView.swift in Sources */,
 				34FF3DE8290EDBAE00DDC681 /* Editor+ToolView.swift in Sources */,
@@ -495,13 +523,14 @@
 				DEVELOPMENT_TEAM = 8HA3X89398;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegram_IOS_Contest_2022/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Telegram Contest Pavel Lunev";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Telegram Contest Pavel Lunev";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TelegramContenst2022 - Pavel Lunev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -525,13 +554,14 @@
 				DEVELOPMENT_TEAM = 8HA3X89398;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Telegram_IOS_Contest_2022/Info.plist;
-				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Telegram Contest Pavel Lunev";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Telegram Contest Pavel Lunev";
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSCameraUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "TelegramContenst2022 - Pavel Lunev";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "TelegramContenst2022 - Pavel Lunev";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

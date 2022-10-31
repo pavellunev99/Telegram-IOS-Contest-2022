@@ -239,7 +239,15 @@ extension EditorToolsView {
 
         weak var delegate: FontFamilySelectorViewDelegate?
 
-        private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        private var collectionLayout: UICollectionViewFlowLayout = {
+            $0.scrollDirection = .horizontal
+            $0.minimumLineSpacing = 12
+            $0.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+            $0.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+            return $0
+        }(UICollectionViewFlowLayout())
+
+        private lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionLayout)
 
         override func setup() {
             super.setup()
@@ -249,6 +257,7 @@ extension EditorToolsView {
             collectionView.delegate = self
             collectionView.dataSource = self
             collectionView.translatesAutoresizingMaskIntoConstraints = false
+            collectionView.contentInsetAdjustmentBehavior = .never
             addSubview(collectionView)
         }
 
@@ -257,20 +266,6 @@ extension EditorToolsView {
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
             collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        }
-
-        override func layoutSubviews() {
-            super.layoutSubviews()
-
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            layout.minimumLineSpacing = 12
-            layout.minimumInteritemSpacing = 12
-            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-            layout.itemSize.height = 30
-            layout.sectionInset = .init(top: 0, left: 16, bottom: 0, right: 16)
-
-            collectionView.setCollectionViewLayout(layout, animated: true)
         }
 
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -334,12 +329,10 @@ extension EditorToolsView {
         override init(frame: CGRect) {
             super.init(frame: frame)
 
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-
-            contentView.layer.masksToBounds = true
             contentView.layer.borderWidth = 1
             contentView.layer.masksToBounds = true
             contentView.layer.cornerRadius = 9
+            contentView.layer.borderColor = isSelected ? UIColor.white.cgColor : UIColor.white.withAlphaComponent(0.33).cgColor
 
             label.textAlignment = .center
             label.textColor = .white
@@ -354,15 +347,12 @@ extension EditorToolsView {
         override func didMoveToSuperview() {
             super.didMoveToSuperview()
 
-            contentView.heightAnchor.constraint(equalToConstant: 30).isActive = true
-            contentView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-            contentView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-            contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
+            label.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+            label.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
 
-            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8).isActive = true
-            label.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
-            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
+            label.heightAnchor.constraint(equalToConstant: 30).isActive = true
 
             label.setContentHuggingPriority(.required, for: .horizontal)
             label.setContentCompressionResistancePriority(.required, for: .horizontal)

@@ -33,20 +33,7 @@ extension EditorViewController: EditorToolsViewDelegate {
     }
 
     func toolsViewTapSelectColor() {
-        switch Int.random(in: 0...5) {
-        case 0:
-            drawColor = .cyan
-        case 1:
-            drawColor = .green
-        case 2:
-            drawColor = .blue
-        case 3:
-            drawColor = .white
-        case 4:
-            drawColor = .yellow
-        default:
-            drawColor = .red
-        }
+        present(colorSelectorViewController, animated: true)
     }
 
     func centerViewDrawEditorSelected() {
@@ -75,7 +62,7 @@ extension EditorViewController: TextPropertiesSelectorViewDelegate {
             fontName = fontNames.first!
         }
 
-        self.textFont = UIFont.init(name: fontName, size: 50) ?? .systemFont(ofSize: 50)
+        self.textFont = UIFont.init(name: fontName, size: 100) ?? .systemFont(ofSize: 100)
 
         canvasView.textsView.updateEditingViewStyle()
     }

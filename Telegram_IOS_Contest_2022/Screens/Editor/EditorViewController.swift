@@ -23,11 +23,13 @@ final class EditorViewController: ViewController {
 
     let gradientLayer = CAGradientLayer()
 
+    let colorSelectorViewController = ColorSelectorViewController()
+
     // MARK: Properties
 
     var drawColor: UIColor = .red
 
-    var textFont: UIFont = .systemFont(ofSize: 50, weight: .bold)
+    var textFont: UIFont = .systemFont(ofSize: 100, weight: .bold)
     var textColor: UIColor = .white
     var textAlignment: NSTextAlignment = .left
     var textStyle: TextStyle = .none
@@ -67,6 +69,15 @@ final class EditorViewController: ViewController {
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         activityIndicator.color = .white
         view.addSubview(activityIndicator)
+
+        colorSelectorViewController.modalPresentationStyle = .formSheet
+        colorSelectorViewController.delegate = self
+
+        if let sheet = colorSelectorViewController.sheetPresentationController {
+            sheet.detents = [.medium(), .large()]
+            sheet.prefersGrabberVisible = false
+            sheet.prefersEdgeAttachedInCompactHeight = true
+        }
 
         centerViewDrawEditorSelected()
     }

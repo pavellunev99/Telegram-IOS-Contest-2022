@@ -18,7 +18,7 @@ extension EditorToolsView {
 
         weak var delegate: EditorToolsLeftViewDelegate?
 
-        private let colorsButton = Button()
+        private let colorsButton = ColorsButton()
         private let closeButton = Button()
 
         override func setup() {
@@ -26,7 +26,6 @@ extension EditorToolsView {
 
             colorsButton.translatesAutoresizingMaskIntoConstraints = false
             colorsButton.addTarget(self, action: #selector(tapSelectColor), for: .touchUpInside)
-            colorsButton.imageView.image = .init(named: "colorPicker")
             addSubview(colorsButton)
 
             closeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +62,43 @@ extension EditorToolsView {
         @objc
         private func tapClose() {
             delegate?.tapClose()
+        }
+    }
+
+    final class ColorsButton: View {
+
+        private let circle = RainbowCircle()
+        private var circleLayer = CAShapeLayer()
+
+        override func setup() {
+            super.setup()
+
+            backgroundColor = .clear
+
+            circle.translatesAutoresizingMaskIntoConstraints = false
+            circle.lineHeight = 3
+            circle.isUserInteractionEnabled = false
+            addSubview(circle)
+
+            layer.addSublayer(circleLayer)
+            circleLayer.fillColor = UIColor.white.cgColor
+        }
+
+        override func setupSizes() {
+            super.setupSizes()
+
+            circle.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            circle.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+            circle.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+            circle.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        }
+
+        override func draw(_ rect: CGRect) {
+            super.draw(rect)
+
+            let radius: CGFloat = rect.height * 0.3
+            circleLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 2.0 * radius, height: 2.0 * radius), cornerRadius: radius).cgPath
+            circleLayer.position = CGPoint(x: rect.midX - radius, y: rect.midY - radius)
         }
     }
 }
